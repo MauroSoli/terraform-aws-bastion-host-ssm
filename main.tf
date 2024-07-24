@@ -86,6 +86,7 @@ module "instance_profile_role" {
   custom_role_policy_arns = [
     "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore",
     "arn:aws:iam::aws:policy/EC2InstanceConnect",
+    var.bastion_additional_custom_iam_policy_arns
   ]
 
   tags = var.tags

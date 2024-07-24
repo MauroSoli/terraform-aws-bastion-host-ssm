@@ -45,6 +45,11 @@ variable "bastion_access_tag_value" {
   default = "developer"
 }
 
+variable "bastion_additional_custom_iam_policy_arns" {
+  type        = list(string)
+  description = "A list of policy ARNs that will be added to the bastion host"
+}
+
 variable "egress_open_tcp_ports" {
   type        = list(number)
   description = "The list of TCP ports to open for outgoing traffic."
@@ -120,3 +125,4 @@ variable "ami_id" {
   description = "The AMI ID to use for the bastion host. If not set, the latest AMI matching the ami_name_filter will be used."
   default     = null
 }
+
